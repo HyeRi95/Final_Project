@@ -1,0 +1,162 @@
+
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+{% load static %}
+<html>
+	<head>
+		<title>Today Diary</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'diaryapp/assets/css/main.css' %}">
+		<noscript><link rel="stylesheet" href="{% static 'diaryapp/assets/css/noscript.css' %}"></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-gem"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Today Diary</h1>
+								<p>안녕하세요 오늘의 일기입니다 <br>
+								   오늘에 대한 여러분의 느낌을 자유롭게 표현해보세요.</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="/diaryapp/login">Login</a></li>
+								<li><a href="/diaryapp/text">TEXT</a></li>
+								<li><a href="/diaryapp/voice">VOICE</a></li>
+								<li><a href="#DIARY">DIARY</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+{% comment %} 
+						<!-- Login -->
+							<article id="Login">
+								<h2 class="major">Login</h2>
+								<form method="post" action="/diaryapp/login.html"> {% endcomment %}
+									{% comment %} <div class="fields">
+										<div class="field">
+											<label for="name">ID</label>
+											<input type="text" name="mem_id" value="">
+										</div>
+										<div class="field">
+											<label for="email">PW</label>
+											<input type="password" placeholder="Password" name="mem_pass" value="">
+											<button type="button" onclick="send()">로그인</button>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Login" class="primary" /></li>
+
+										<li><input type="button" value="Signup" onClick="location.href='/diary/signup/'"></li>
+									</ul> {% endcomment %}
+								</form>
+							</article>
+                        <!-- TEXT -->
+							<article id="TEXT">
+								<h2 class="major">TEXT</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field">
+											<label for="message">Today Diary</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Save" class="primary" /></li>
+										<li><input type="button" value="분석하기" onClick="location.href= '/diaryapp/result_t_logout'" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+                        <!-- VOICE -->
+							<article id="VOICE">
+								<h2 class="major">VOICE</h2>
+								<form method="post" action="#">
+									<ul class="actions">
+										<li><input type="button" value="녹음하기" class="primary" /></li>
+									</ul>
+									<div class="fields">
+										<div class="field">
+											<label for="message">Today Diary</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Save" class="primary" /></li>
+										<li><input type="button" value="분석하기" onClick="location.href='/diaryapp/result_v_logout'" /></li>
+									</ul>
+								</form>
+							</article>
+
+						<!-- DIARY -->
+							<article id="DIARY">
+								<h2 class="major">DIARY</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+                    </div>
+
+                    				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="{% static 'diaryapp/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'diaryapp/assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'diaryapp/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'diaryapp/assets/js/util.js' %}"></script>
+			<script src="{% static 'diaryapp/assets/js/main.js' %}"></script>
+
+    </body>
